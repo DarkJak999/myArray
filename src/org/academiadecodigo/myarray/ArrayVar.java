@@ -16,11 +16,11 @@ public class ArrayVar {
     ArrayVar(){
         this.arrElements = new String[initMax];
     }
-    //add
+    //add - Done and working
     //remove
-    //get
+    //get - done and working
     //find
-    //size - done
+    //size - done and working
 
     public static int getInitMax() {
         return initMax;
@@ -62,6 +62,44 @@ public class ArrayVar {
 
     public static String get(int index){
 
+        if(index >= size){
+            return "index out of bounds";
+        }
+
         return arrElements[index];
     }
+
+    public static void remove(int index){
+
+        for (int i = index; i < size; i++)
+            arrElements[i] = arrElements[i+1];
+        size--;
+
+    }
+
+    public static int find(String searchElement){
+
+        for(int i = 0; i < size; i++){
+            if(arrElements[i].equals(searchElement))
+                return i;
+        }
+        return -1;
+    }
+
+    public static void emptyArray(){
+
+        for(int i = 0; i < size; i++){
+            arrElements[i] = null;
+        }
+        size = 0;
+    }
+
+    public static boolean isEmpty(){
+
+        if(size == 0)
+            return true;
+        return false;
+    }
+
+
 }

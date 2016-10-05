@@ -10,12 +10,32 @@ public class ContactList {
         ArrayVar myArray = new ArrayVar();
 
         for(int i = 0; i < 6; i++)
-            myArray.add("nhe");
+            myArray.add("nhe" + i);
 
 
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < myArray.size(); i++)
             System.out.println(myArray.get(i));
 
+        System.out.println(myArray.find("nhe1"));
+
+        myArray.remove(2);
+
+        for(int i = 0; i < myArray.size(); i++){
+            System.out.println(myArray.get(i));
+        }
+
         System.out.println(myArray.size());
+
+        System.out.println(myArray.isEmpty());
+
+        myArray.emptyArray();
+
+        System.out.println(myArray.isEmpty());
+
+        for(int i = 0; i < myArray.size(); i++){
+            System.out.println(myArray.get(i));
+        }
+
+
     }
 }
