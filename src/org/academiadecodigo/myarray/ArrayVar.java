@@ -6,10 +6,10 @@ import java.util.*;
  */
 public class ArrayVar {
 
-    private static int size = 0;
+    private int size = 0;
     private static final int initMax = 5;
-    private static int totalSize = initMax;
-    private static String[] arrElements;
+    private int totalSize = initMax;
+    private String[] arrElements;
 
 
 
@@ -17,9 +17,9 @@ public class ArrayVar {
         this.arrElements = new String[initMax];
     }
     //add - Done and working
-    //remove
+    //remove - done and working
     //get - done and working
-    //find
+    //find - done and working
     //size - done and working
 
     public static int getInitMax() {
@@ -38,7 +38,7 @@ public class ArrayVar {
     If not, just add the element
      */
 
-    public static void add(String newElement){
+    public void add(String newElement){
 
         if(size == (totalSize - 1)){
             arrElements = extendArray();
@@ -49,7 +49,7 @@ public class ArrayVar {
     }
 
     //extend array. If array is already at max capacity, make a new array
-    public static String[] extendArray(){
+    public String[] extendArray(){
 
         totalSize *= 2;
 
@@ -60,7 +60,7 @@ public class ArrayVar {
         return newArray;
     }
 
-    public static String get(int index){
+    public String get(int index){
 
         if(index >= size){
             return "index out of bounds";
@@ -69,7 +69,7 @@ public class ArrayVar {
         return arrElements[index];
     }
 
-    public static void remove(int index){
+    public void remove(int index){
 
         for (int i = index; i < size; i++)
             arrElements[i] = arrElements[i+1];
@@ -77,7 +77,7 @@ public class ArrayVar {
 
     }
 
-    public static int find(String searchElement){
+    public int find(String searchElement){
 
         for(int i = 0; i < size; i++){
             if(arrElements[i].equals(searchElement))
@@ -86,7 +86,7 @@ public class ArrayVar {
         return -1;
     }
 
-    public static void emptyArray(){
+    public void emptyArray(){
 
         for(int i = 0; i < size; i++){
             arrElements[i] = null;
@@ -94,7 +94,7 @@ public class ArrayVar {
         size = 0;
     }
 
-    public static boolean isEmpty(){
+    public boolean isEmpty(){
 
         if(size == 0)
             return true;
